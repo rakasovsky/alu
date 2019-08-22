@@ -99,6 +99,7 @@
 }
 .catalog_product {
    text-align: center;
+   /* margin-right: 10px; */
 }
 
 ul {
@@ -134,6 +135,8 @@ ul {
 
 .results {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-areas: "catalog_product catalog_product catalog_product catalog_product"
+                         "catalog_product catalog_product catalog_product catalog_product";   
+}   
 </style>
