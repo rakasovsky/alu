@@ -30,6 +30,15 @@ export default {
   */
   plugins: [
   ],
+  
+  /*
+  ** Router settings 
+
+  */
+  router: {
+    
+  },
+
   /*
   ** Nuxt.js dev-modules
   */

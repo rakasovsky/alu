@@ -1,3 +1,4 @@
+
 <template>
     <section class="catalog_wrapper">
         <div class="catalog_top_container">
@@ -46,51 +47,63 @@
                     <h3>Results</h3>
                     <div class="search">
 						<div class="search-wrapper">
-							<input class="search-wrapper_input" type="text">
+							<input type="text"  v-model="search" placeholder="Search title.."/>
 						</div>
-						<div class="search-btn">
+						<!-- <div class="search-btn">
 							<button>Search</button>
-						</div>
+						</div> -->
 					</div>
                 </div>
                 <div class="results">
-                     <div class="catalog_product">
-                        <img src="@/assets/img/1trapeciya-1.png">
-                        <p>Aluminum construction ruler</p>
-                     </div>
-                     <div class="catalog_product">
-                        <img src="@/assets/img/1trapeciya-1.png">
-                        <p>Aluminum construction ruler</p>
-                     </div>
-                     <div class="catalog_product">
-                        <img src="@/assets/img/1trapeciya-1.png">
-                        <p>Aluminum construction ruler</p>
-                     </div>
-                     <div class="catalog_product">
-                        <img src="@/assets/img/1trapeciya-1.png">
-                        <p>Aluminum construction ruler</p>
-                     </div>
-                     <div class="catalog_product">
-                        <img src="@/assets/img/1trapeciya-1.png">
-                        <p>Aluminum construction ruler</p>
-                     </div>
-                     <div class="catalog_product">
-                        <img src="@/assets/img/1trapeciya-1.png">
-                        <p>Aluminum construction ruler</p>
-                     </div>
-                     <div class="catalog_product">
-                        <img src="@/assets/img/1trapeciya-1.png">
-                        <p>Aluminum construction ruler</p>
-                     </div>
-                     <div class="catalog_product">
-                        <img src="@/assets/img/1trapeciya-1.png">
-                        <p>Aluminum construction ruler</p>
+                     <!-- <div class="product_card" v-for="post in filteredList" :key="post">
+                         <a v-bind="post.link" target="_blank">
+                             <img v-bind:src='post.img'/>
+                             <p>{{post}}</p>
+                         </a>
+                     </div>    -->
+                     <div class="catalog_product" v-for="post in postList" key="post">
+                         {{ Post }}
                      </div>
                 </div>
             </div>
         </section>
     </section>
 </template>
+
+<script>
+import catalogfilter from '@/services/catalogfilter'
+export default {
+
+    head: {
+        title: 'Catalog page 🚀'
+    },
+
+    
+    data: () =>({
+
+        search: '',
+        postList : [
+                 post(
+                    'Vue.js', 
+                    'https://vuejs.org/', 
+                    'Chris', 
+                    'https://vuejs.org//images/logo.png'
+                ),
+                 Post(
+                    'React.js', 
+                    'https://facebook.github.io/react/', 
+                    'Tim',
+                    'https://daynin.github.io/clojurescript-presentation/img/react-logo.png'
+                ),
+                
+        ]
+    })
+
+
+}
+   
+
+</script>
 
 <style scoped>
 .catalog_products_container {
